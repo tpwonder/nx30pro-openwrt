@@ -209,3 +209,17 @@ jobs:
           name: NX30PRO_OpenWrt
           path: output/*
           retention-days: 30
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "v1.0.0-$(date +%Y%m%d)"
+          name: "NX30PRO OpenWrt $(date +%Y-%m-%d)"
+          body: |
+            H3C Magic NX30 Pro OpenWrt 固件
+源码: [immortalwrt-mt798x-6.6](https://github.com/padavanonly/immortalwrt-mt798x-6.6)
+
+**插件列表:** argon主题 / 网络监控 / ttyd / zerotier / reguard / upnp / ipv6 / cloudflared / kms / nano / iperf3
+          files: output/*
+          draft: false
+          prerelease: false
